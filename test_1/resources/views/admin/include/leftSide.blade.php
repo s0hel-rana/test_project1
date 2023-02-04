@@ -19,6 +19,19 @@
                         <a class="nav-link" href="{{route('supplier.list')}}">Supplier List</a>
                     </nav>
                 </div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Product Setup
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{route('category.add')}}">Add Category</a>
+                        <a class="nav-link" href="{{route('category.list')}}"> Category List</a>
+                        <a class="nav-link" href="{{route('subCategory.add')}}">Add  SubCategory</a>
+                        <a class="nav-link" href="{{route('subCategory.list')}}"> SubCategory List</a>
+                    </nav>
+                </div>
 
             </div>
         </div>
