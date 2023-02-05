@@ -4,7 +4,75 @@ BackEnd
 @endsection
 @section('content')
 <div class="container-fluid px-4">
-    
+
+
+    {{-- popup start --}}
+<style>
+    .sidebar {
+      position: fixed;
+      background: rgb(188, 188, 216);
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 300px;
+      background-color: rgb(235, 148, 148);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: right 0.3s ease-out;
+    }
+
+    .sidebar-content {
+      border: 4px solid blue;
+      background: white;
+      padding: 20px;
+    }
+
+    .sidebar.open {
+        background: rgb(201, 73, 73);
+        height: 300px;
+        width: 400px;
+        margin-top: 104px;
+        z-index: 5;
+        right: 0;
+    }
+    #toggle-sidebar{
+        background: #eba7ab;
+        margin-top: 20px;
+    margin-left: 941px;
+
+    }
+    </style>
+
+    <main>
+        <div class="sidebar">
+            <div class="sidebar-content">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    One
+                  </div>
+                  <div class="col-sm">
+                    Two
+                  </div>
+                  <div class="col-sm">
+                    Three
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button id="toggle-sidebar"><i class="fa fa-bars"></i></button>
+    </main>
+    <script>
+        const sidebar = document.querySelector(".sidebar");
+        const toggleButton = document.querySelector("#toggle-sidebar");
+
+        toggleButton.addEventListener("click", function() {
+        sidebar.classList.toggle("open");
+        });
+    </script>
+    {{-- popup end --}}
 
     <h1 class="mt-4">Dashboard</h1>
     <ol class="breadcrumb mb-4">
