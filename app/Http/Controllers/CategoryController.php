@@ -11,11 +11,6 @@ class CategoryController extends Controller
         return view('admin.category.add_category');
     }
     public function saveCategory(Request $request){
-        $validatedData = $request->validate([
-            'name' => 'required|max:255',
-            'decrption' => 'required',
-
-        ]);
         $category = new Category();
         $category->name =$request->name;
         $category->decrption =$request->decrption;
