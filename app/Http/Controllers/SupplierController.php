@@ -13,13 +13,22 @@ class SupplierController extends Controller
     }
 
     public function saveSuppliser(Request $request){
+
+    $validatedData = $request->validate([
+        'name' => 'required|max:255',
+        'phone_number' => 'required|numeric',
+        'code' => 'required',
+        'address' => 'required',
+
+    ]);
         $supplier = new Supplier();
         $supplier->name =$request->name;
         $supplier->phone_number =$request->phone_number;
         $supplier->code =$request->code;
         $supplier->address =$request->address;
         $supplier->save();
-        return redirect()->route('supplier.list');
+
+        return redirect()->route('supplier.list')->with('success', 'Supplier data saved successfully!');
         // return back()->with('msg','Supplier Added Sucssfully');
     }
 
@@ -52,13 +61,20 @@ class SupplierController extends Controller
     }
 
     public function updateSupplier(Request $request){
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'phone_number' => 'required|numeric',
+            'code' => 'required',
+            'address' => 'required',
+        ]);
         $supplier = Supplier::find($request->supplier_id);
         $supplier->name =$request->name;
         $supplier->phone_number =$request->phone_number;
         $supplier->code =$request->code;
         $supplier->address =$request->address;
         $supplier->save();
-        return redirect()->route('supplier.list');
+        return redirect()->route('supplier.list')->with('success', 'Supplier data Edit successfully!');
+
 
     }
 }

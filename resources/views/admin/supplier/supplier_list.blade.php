@@ -9,6 +9,12 @@
         <div class="col-md-12">
             <h4 class="mt-4">Supplier List</h4>
 
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+             @endif
+
             <div class="card mb-4">
                 <div class="card-body">
                     <a  href="https://datatables.net/">Supplier Add</a>

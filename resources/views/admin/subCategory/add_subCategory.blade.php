@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('title')
-Add Category
+Add subCategory
 @endsection
 @section('content')
 
@@ -11,7 +11,7 @@ Add Category
 
             <div class="card mb-4">
                 <div class="card-body">
-                    <a  href="https://datatables.net/">Supplier List</a>
+                    <a  href="">Supplier List</a>
                 </div>
             </div>
             <div class="card mb-4">
